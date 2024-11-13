@@ -1,0 +1,766 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    --bg-color: #fff;
+    --snd-bg-color: #d5fdf9;
+    --text-color: #000;
+    --main-color: #007f73;
+    --green-shadow: rgba(0, 255, 0, 0.3);  /*Green shadow color */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: var(--main-color);
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 1.9rem;
+    color: var(--bg-color);
+    margin-left: 4em;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--text-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Show the menu icon on smaller screens */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Display menu icon */
+    }
+
+    .navbar {
+        display: none; /* Hide navbar by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--main-color);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    .navbar a {
+        margin: 1.5rem 0; /* Spacing for links */
+    }
+}
+
+
+
+
+
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15rem;
+    text-align: center;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.home-img img {
+    width: 20vw;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds transition effect */
+}
+
+.home-img img:hover {
+    transform: translateY(-20px); /* Creates a float effect */
+    box-shadow: 0 15px 30px var(--green-shadow), /* Green shadow on hover */
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 2.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.home-content h1 {
+    font-size: 4.8rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.role-text {
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: #666;
+    margin: 1rem 0 2rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+/* Roll (Typewriter) Text Effect */
+@keyframes rollText {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.roll-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: rollText 3s steps(30) forwards; /* Adjust the steps for the number of letters */
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+/* Apply the rolling effect to the text */
+.blinking-text {
+    color: var(--main-color);
+}
+
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: powderblue;
+    justify-content: space-between;
+}
+
+.about-img img {
+    width: 25vw;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--green-shadow),
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+
+.heading {
+    font-size: 6rem;
+    text-align: center;
+}
+
+.about-content {
+    padding: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.about-content h2 {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0;
+}
+
+.about-img {
+    flex: 1;
+    text-align: right;
+}
+
+
+.read-more {
+    display: none;
+}
+
+.projects {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+}
+
+.projects-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects-box {
+    background: var(--snd-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 25rem;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.projects-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 127, 115, 0.3);
+}
+
+.projects-box i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.projects-box h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.projects-box p {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+/* General Styles for Experience Section */
+.experience {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.experience-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.experience-box .heading {
+    font-size: 6rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.experience-item img {
+    width: 150px; /* Increased width for a larger logo */
+    height: 150px; /* Increased height for a larger logo */
+    border-radius: 100%; /* Circular shape */
+    object-fit: contain; /* Ensures full image fits within the circle */
+    background-color: white; /* Adds a white background to avoid cropping */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.experience-item img:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 35px var(--main-color), 0 0 45px var(--main-color);
+}
+
+.experience-item h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 0;
+}
+
+#star {
+    color: gold;
+    font-size: 1.2rem;
+    margin-right: 3px;
+}
+
+/* Right-Aligned Text for Experience Details */
+.experience-item p, .experience-item ul {
+    text-align: left;
+    font-size: 2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.experience-item ul li {
+    font-size: 1.1rem; /* Increased font size for job responsibilities */
+    color: #555;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.experience-item p, .experience-item ul {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Link Effect */
+.experience-item h2:hover {
+    text-decoration: underline;
+}
+
+.experience-item h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Add scroll effect to list items */
+.experience-item ul li:hover {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.experience-item img:active {
+    box-shadow: 0 0 25px var(--main-color), 0 0 35px var(--main-color), 0 0 45px var(--main-color);
+}
+
+/* Additional hover animation for link */
+.experience-item h2:hover a {
+    color: var(--main-color);
+}
+
+
+.experience-item ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.experience-item ul li {
+    position: relative;
+    padding-left: 25px; /* Space for the star icon */
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Add star icon before each item */
+.experience-item ul li::before {
+    content: '\2605'; /* Unicode for a solid star */
+    position: absolute;
+    left: 0;
+    color: gold;
+    font-size: 2rem;
+    top: 0;
+    line-height: 1;
+}
+
+
+
+/* Hover effect for social media icons */
+.social-media a {
+    margin: 0 10px;
+    color: #333; /* Default color */
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #00d0ff; /* Change this to any color you want */
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+/* Hover effect for Download CV button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00d0ff;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00a1b3; /* Darker shade for hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--snd-bg-color); /* Optional: background color for footer */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically, if needed */
+    gap: 15px; /* Space between icons */
+}
+
+.social-media a {
+    color: var(--main-color);
+    font-size: 2.4rem;
+    transition: all 0.3s ease;
+}
+@media (max-width:991px) {
+    .header{
+        padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3%;
+    }
+    .projects {
+        padding: 7rem;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width:991px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100px;
+        width: 255px;
+        right: -100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--main-color);
+        transition: all 0.5s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar a  {
+        display:block;
+        padding: 17px;
+        font-size: 22px;
+    }
+    .navbar.active {
+        right: 0;
+    }
+    .home {
+        flex-direction: column;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    ..home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .projects h2 {
+        margin-bottom: 3rem;
+
+    }
+}
+@media(max-width:617) {
+    .home-img {
+        margin-top: 8rem;
+        width: 70vw;
+    }
+    .about-img {
+        margin-top: 4rem;
+        width: 70vw;
+    }
+}
+@media(max-width:617) {
+    html {
+        font-size: 50%;
+    }
+}
+
+.internships {
+    padding: 5rem 10%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.internships-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.internship-item {
+    background: var(--snd-bg-color);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.internship-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.internship-item h3 {
+    font-size: 2.4rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.internship-item p, .internship-item ul {
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.internship-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.internship-item .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.internship-item .btn:hover {
+    background-color: #00a1b3;
+}
+
+
+.internship-item ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.certifications {
+    padding: 5rem 10%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.certifications-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certification-item {
+    background: var(--snd-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.certification-item p {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.certification-item .btn {
+    padding: 0.8rem 2rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.certification-item .btn:hover {
+    background-color: #00a1b3;
+}
+
+/* Description styling */
+.description {
+    display: none;
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.btn.read-more {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Description styling */
+.description {
+    display: none;
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.btn.read-more {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.description {
+    display: none;
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.btn.read-more {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn.read-more:hover {
+    background-color: #00a1b3;
+}
+.certification-item ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.certification-item li {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+
+
